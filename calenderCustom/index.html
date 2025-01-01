@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCalender</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="calendar-container">
+        <img src="icon-512x512.png" alt="Gambar Kalender" style="width: 100%; height: 200px;">
+        <h1>Syarifah Almahira</h1>
+        <header>
+            <button id="prev-month">&lt;</button>
+            <h2 id="current-month-year"></h2>
+            <button id="next-month">&gt;</button>
+        </header>
+
+        <div class="days-header">
+            <div>Sen</div>
+            <div>Sel</div>
+            <div>Rab</div>
+            <div>Kam</div>
+            <div>Jum</div>
+            <div>Sab</div>
+            <div>Min</div>
+        </div>
+        <div id="dates-container" class="dates-container"></div>
+    
+        <div id="holidayText" style="margin-top: 20px; font-size: 14px; font-weight: bold; color: red;"></div>
+    </div>
+    <script>
+        // Daftar service worker
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js")
+    .then((registration) => {
+        console.log("Service Worker terdaftar dengan sukses:", registration.scope);
+    })
+    .catch((error) => {
+        console.log("Service Worker pendaftaran gagal:", error);
+    });
+}
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
